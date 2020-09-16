@@ -1,18 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoverScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-         
-    }
+    public float moveSpeed;
+    private Vector3 _moveDirection;
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        transform.Translate(Input.GetAxis("Horizontal")*Time.deltaTime, 0f, 0f);
+        if (Input.GetButton("Jump"))
+        {
+            _moveDirection.x = moveSpeed * Time.deltaTime;
+            transform.Translate(_moveDirection);
+        }
+        else
+        {
+            _moveDirection.x = -moveSpeed * Time.deltaTime;
+            transform.Translate(_moveDirection);
+        }
     }
 }
