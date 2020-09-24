@@ -1,21 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class MoverScript : MonoBehaviour
 {
-    public float moveSpeed;
-    private Vector3 _moveDirection;
-
-    public void Update()
+    public CharacterController controller;
+    private Vector3 moveDirection;
+    private float yDirection;
+    public float moveSpeed = 5f, gravity = -9.81f, jumpForce = 10f;
+    private void Update() //update runs every frame
     {
-        if (Input.GetButton("Jump"))
+        var moveSpeedInput = moveSpeed * Input.GetAxis("Horizontal");
+        
+        moveDirection.Set(moveSpeedInput,0,0);
+
+        yDirection += gravity * Time.deltaTime;
+        
+        if (controller.isGrounded && moveDirection.y< 0)
         {
-            _moveDirection.x = moveSpeed * Time.deltaTime;
-            transform.Translate(_moveDirection);
+            yDirection = 1f;
         }
-        else
+
+        if (Input.GetButtonDown("Jump"))
         {
-            _moveDirection.x = -moveSpeed * Time.deltaTime;
-            transform.Translate(_moveDirection);
+            yDirection = jumpForce;
         }
+        
+        var movement = moveDirection * Time.deltaTime;
+        controller.Move(movement);
     }
 }
