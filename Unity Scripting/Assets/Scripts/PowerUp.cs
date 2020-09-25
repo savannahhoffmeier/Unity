@@ -1,13 +1,13 @@
 ﻿using System.Runtime.InteropServices;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour
-{
- public int score;
+public Color redcolor;
+public Color bluecolor;
 
- private void OnTriggerEnter(Collider other)
- {
-  score++;
-  print(score);
- }
+void OnTriggerEnter(Collider other);
+
+if (other.gameObject.compareTag("Player1"))
+{
+Debug.Log("Made Contact")
+    transform.GetComponent<Render>().material.color=redcolor;
 }
