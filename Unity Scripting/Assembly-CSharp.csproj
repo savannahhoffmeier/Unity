@@ -62,7 +62,6 @@
      <Compile Include="Assets\Scripts\DefenceInc.cs" />
      <Compile Include="Assets\Scripts\HealthPowerUp.cs" />
      <Compile Include="Assets\Scripts\MoverScript.cs" />
-     <Compile Include="Assets\Scripts\PowerUp.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
