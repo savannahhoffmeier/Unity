@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AmmoInc.cs" />
+     <Compile Include="Assets\Scripts\CharacterScript.cs" />
      <Compile Include="Assets\Scripts\DefenceInc.cs" />
      <Compile Include="Assets\Scripts\HealthPowerUp.cs" />
      <Compile Include="Assets\Scripts\MoverScript.cs" />
