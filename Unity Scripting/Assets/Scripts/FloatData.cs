@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu]
-public class IntData : ScriptableObject
+
+public class FloatData : MonoBehaviour
 {
-    public float value;
+  
 }

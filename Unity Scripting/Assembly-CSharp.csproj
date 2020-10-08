@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\BoolData.cs" />
      <Compile Include="Assets\Scripts\CharacterScript.cs" />
      <Compile Include="Assets\Scripts\DefenceInc.cs" />
+     <Compile Include="Assets\Scripts\FloatData.cs" />
      <Compile Include="Assets\Scripts\HealthPowerUp.cs" />
      <Compile Include="Assets\Scripts\IntData.cs" />
      <Compile Include="Assets\Scripts\MoveLeft.cs" />
