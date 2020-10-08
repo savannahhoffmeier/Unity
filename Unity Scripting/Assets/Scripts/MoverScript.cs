@@ -3,29 +3,37 @@ using UnityEngine;
 
 public class MoverScript : MonoBehaviour
 {
-    public CharacterController controller;
-    private Vector3 moveDirection;
-    private float yDirection;
-    public float moveSpeed = 5f, gravity = -9.81f, jumpForce = 10f;
-    private void Update() //update runs every frame
+  private Rigidbody PlayerRb;
+  public float jumpForce;
+  public float gravityMod;
+  public bool isOnGround;
+  public BoolData gameOver;
+
+  private void Start()
+  {
+    PlayerRb = GetComponent < Rigidbody();
+    Physics.gravity *= gravityMod;
+    gameOver.value = false;
+  }
+
+   void Update()
+  {
+    if (Input.GetKeyDown(KeyCode.Space)&& isOnGround)
     {
-        var moveSpeedInput = moveSpeed * Input.GetAxis("Horizontal");
-        
-        moveDirection.Set(moveSpeedInput,0,0);
-
-        yDirection += gravity * Time.deltaTime;
-        
-        if (controller.isGrounded && moveDirection.y< 0)
-        {
-            yDirection = 1f;
-        }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            yDirection = jumpForce;
-        }
-        
-        var movement = moveDirection * Time.deltaTime;
-        controller.Move(movement);
+      PlayerRb.AddForce(Vector3.up*8,ForceMode.Impulse);
+      isOnGround = false;
     }
+  }
+
+   private void OnCollisionEnter(Collision collision)
+   {
+     if (collision.gameObject.CompareTag("Ground"))
+     {
+       isOnGround = true;
+     }else if (collision.other.CompareTag("Obstacle"))
+     {
+       gameOver.value = true;
+       Debug.Log("Game Over");
+     }
+   }
 }
