@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 1716369787}
   - component: {fileID: 1716369786}
   - component: {fileID: 1716369785}
+  - component: {fileID: 1716369789}
   - component: {fileID: 1716369784}
   m_Layer: 0
   m_Name: Ground
@@ -233,9 +234,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716369783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d301b3aaaa2d67241bbb6a77978da0f7, type: 3}
+  m_Script: {fileID: 11500000, guid: d3f4dff7936d5414887120c88b2085bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  gravity: -8.81
+  jumpForce: 10
 --- !u!65 &1716369785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -310,3 +314,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &1716369789
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716369783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
