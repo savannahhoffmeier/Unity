@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\ApplyForce.cs" />
      <Compile Include="Assets\Scripts\CharacterMover_1.cs" />
      <Compile Include="Assets\Scripts\Destroyer.cs" />
+     <Compile Include="Assets\Scripts\FloatData.cs" />
      <Compile Include="Assets\Scripts\Instancer.cs" />
      <Compile Include="Assets\Scripts\MoverScript.cs" />
      <Compile Include="Assets\Scripts\TriggerEvents.cs" />
