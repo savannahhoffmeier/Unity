@@ -14,4 +14,9 @@ public class FloatData : ScriptableObject
     {
         img.fillAmount = value;
     }
+
+    public void DisplayNumber(Text txt)
+    {
+        txt.text = value.ToString();
+    }
 }
