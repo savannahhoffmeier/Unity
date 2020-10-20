@@ -59,11 +59,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ApplyForce.cs" />
+     <Compile Include="Assets\Scripts\BoolData.cs" />
      <Compile Include="Assets\Scripts\CharacterMover_1.cs" />
      <Compile Include="Assets\Scripts\Destroyer.cs" />
      <Compile Include="Assets\Scripts\FloatData.cs" />
      <Compile Include="Assets\Scripts\Instancer.cs" />
      <Compile Include="Assets\Scripts\MoverScript.cs" />
+     <Compile Include="Assets\Scripts\StringListData.cs" />
      <Compile Include="Assets\Scripts\TriggerEvents.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
