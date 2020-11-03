@@ -58,16 +58,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ApplyForce.cs" />
-     <Compile Include="Assets\Scripts\BoolData.cs" />
-     <Compile Include="Assets\Scripts\CharacterMover_1.cs" />
-     <Compile Include="Assets\Scripts\ClassReview.cs" />
-     <Compile Include="Assets\Scripts\Destroyer.cs" />
-     <Compile Include="Assets\Scripts\FloatData.cs" />
-     <Compile Include="Assets\Scripts\Instancer.cs" />
-     <Compile Include="Assets\Scripts\MoverScript.cs" />
-     <Compile Include="Assets\Scripts\StringListData.cs" />
-     <Compile Include="Assets\Scripts\TriggerEvents.cs" />
+     <Compile Include="Assets\classScripts\ApplyForce.cs" />
+     <Compile Include="Assets\classScripts\BoolData.cs" />
+     <Compile Include="Assets\classScripts\CharacterMover_1.cs" />
+     <Compile Include="Assets\classScripts\ClassReview.cs" />
+     <Compile Include="Assets\classScripts\Destroyer.cs" />
+     <Compile Include="Assets\classScripts\FlipObjectBehavior.cs" />
+     <Compile Include="Assets\classScripts\FloatData.cs" />
+     <Compile Include="Assets\classScripts\GameAction.cs" />
+     <Compile Include="Assets\classScripts\Instancer.cs" />
+     <Compile Include="Assets\classScripts\MoverScript.cs" />
+     <Compile Include="Assets\classScripts\StringListData.cs" />
+     <Compile Include="Assets\classScripts\TriggerEvents.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
