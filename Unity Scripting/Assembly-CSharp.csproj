@@ -67,6 +67,7 @@
      <Compile Include="Assets\classScripts\FlipObjectBehavior.cs" />
      <Compile Include="Assets\classScripts\FloatData.cs" />
      <Compile Include="Assets\classScripts\GameAction.cs" />
+     <Compile Include="Assets\classScripts\GameActionHandler.cs" />
      <Compile Include="Assets\classScripts\Instancer.cs" />
      <Compile Include="Assets\classScripts\MoverScript.cs" />
      <Compile Include="Assets\classScripts\StringListData.cs" />

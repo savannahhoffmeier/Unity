@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Events;
 public class FloatData : ScriptableObject
 {
     public float value;
@@ -12,6 +12,9 @@ public class FloatData : ScriptableObject
 
     public void DisplayImage(Image img)
     {
+        if (value <= 0)
+        {
+        }
         img.fillAmount = value;
     }
 
