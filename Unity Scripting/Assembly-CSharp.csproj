@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\MyScripts\HealthDisplay.cs" />
+     <Compile Include="Assets\classScripts\AIBehavior.cs" />
      <Compile Include="Assets\classScripts\ApplyForce.cs" />
      <Compile Include="Assets\classScripts\BoolData.cs" />
      <Compile Include="Assets\classScripts\CharacterMover_1.cs" />
