@@ -74,9 +74,11 @@
      <Compile Include="Assets\classScripts\GameActionHandler.cs" />
      <Compile Include="Assets\classScripts\GameSwitch.cs" />
      <Compile Include="Assets\classScripts\Instancer.cs" />
+     <Compile Include="Assets\classScripts\MonoEvents.cs" />
      <Compile Include="Assets\classScripts\MoverScript.cs" />
      <Compile Include="Assets\classScripts\StringListData.cs" />
      <Compile Include="Assets\classScripts\TriggerEvents.cs" />
+     <Compile Include="Assets\classScripts\Vector3Data.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
