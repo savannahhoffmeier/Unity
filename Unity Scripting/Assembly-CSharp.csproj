@@ -61,6 +61,7 @@
      <Compile Include="Assets\MyScripts\AIHomework.cs" />
      <Compile Include="Assets\MyScripts\AddForceBehavior.cs" />
      <Compile Include="Assets\MyScripts\CharacterSwitch.cs" />
+     <Compile Include="Assets\MyScripts\ColorChange.cs" />
      <Compile Include="Assets\MyScripts\HealthDisplay.cs" />
      <Compile Include="Assets\MyScripts\Review.cs" />
      <Compile Include="Assets\classScripts\AIBehavior.cs" />
@@ -71,7 +72,6 @@
      <Compile Include="Assets\classScripts\FlipObjectBehavior.cs" />
      <Compile Include="Assets\classScripts\FloatData.cs" />
      <Compile Include="Assets\classScripts\GameAction.cs" />
-     <Compile Include="Assets\classScripts\GameActionHandler.cs" />
      <Compile Include="Assets\classScripts\GameSwitch.cs" />
      <Compile Include="Assets\classScripts\Instancer.cs" />
      <Compile Include="Assets\classScripts\IntData.cs" />
