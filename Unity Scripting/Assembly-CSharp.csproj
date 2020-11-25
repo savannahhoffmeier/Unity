@@ -62,6 +62,7 @@
      <Compile Include="Assets\MyScripts\AddForceBehavior.cs" />
      <Compile Include="Assets\MyScripts\CharacterSwitch.cs" />
      <Compile Include="Assets\MyScripts\ColorChange.cs" />
+     <Compile Include="Assets\MyScripts\ControllerReview.cs" />
      <Compile Include="Assets\MyScripts\HealthDisplay.cs" />
      <Compile Include="Assets\MyScripts\Review.cs" />
      <Compile Include="Assets\classScripts\AIBehavior.cs" />
