@@ -71,6 +71,7 @@
      <Compile Include="Assets\classScripts\ClassReview.cs" />
      <Compile Include="Assets\classScripts\DefenceSwitch.cs" />
      <Compile Include="Assets\classScripts\Destroyer.cs" />
+     <Compile Include="Assets\classScripts\Enumerator.cs" />
      <Compile Include="Assets\classScripts\FlipObjectBehavior.cs" />
      <Compile Include="Assets\classScripts\FloatData.cs" />
      <Compile Include="Assets\classScripts\GameAction.cs" />
