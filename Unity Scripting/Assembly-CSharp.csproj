@@ -78,6 +78,7 @@
      <Compile Include="Assets\classScripts\GameSwitch.cs" />
      <Compile Include="Assets\classScripts\Instancer.cs" />
      <Compile Include="Assets\classScripts\IntData.cs" />
+     <Compile Include="Assets\classScripts\Loops.cs" />
      <Compile Include="Assets\classScripts\MonoEvents.cs" />
      <Compile Include="Assets\classScripts\MoverScript.cs" />
      <Compile Include="Assets\classScripts\StringListData.cs" />
