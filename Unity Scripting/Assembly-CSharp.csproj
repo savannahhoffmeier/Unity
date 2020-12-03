@@ -67,6 +67,7 @@
      <Compile Include="Assets\MyScripts\Review.cs" />
      <Compile Include="Assets\MyScripts\ScriptTest.cs" />
      <Compile Include="Assets\classScripts\AIBehavior.cs" />
+     <Compile Include="Assets\classScripts\Animation.cs" />
      <Compile Include="Assets\classScripts\CharacterMover_1.cs" />
      <Compile Include="Assets\classScripts\ClassReview.cs" />
      <Compile Include="Assets\classScripts\DefenceSwitch.cs" />
@@ -76,34 +77,21 @@
      <Compile Include="Assets\classScripts\FloatData.cs" />
      <Compile Include="Assets\classScripts\GameAction.cs" />
      <Compile Include="Assets\classScripts\GameSwitch.cs" />
-     <Compile Include="Assets\classScripts\Instancer.cs" />
-     <Compile Include="Assets\classScripts\IntData.cs" />
      <Compile Include="Assets\classScripts\Loops.cs" />
      <Compile Include="Assets\classScripts\MonoEvents.cs" />
      <Compile Include="Assets\classScripts\MoverScript.cs" />
+     <Compile Include="Assets\classScripts\PowerUp.cs" />
      <Compile Include="Assets\classScripts\StringListData.cs" />
      <Compile Include="Assets\classScripts\TriggerEvents.cs" />
      <Compile Include="Assets\classScripts\Vector3Data.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.Animation.Runtime">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.PixelPerfect.Editor">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.SpriteShape.Editor">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Path.Editor">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -111,56 +99,14 @@
  <Reference Include="Unity.Timeline">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
- <Reference Include="Unity.2D.Animation.Triangle.Runtime">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="PsdPlugin">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
- </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Mathematics">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Psdimporter.Editor">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InternalAPIEngineBridge.001">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Common.Runtime">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.SpriteShape.Runtime">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.PixelPerfect">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.PixelPerfect.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Animation.Editor">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics.Editor">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Common.Editor">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InternalAPIEditorBridge.001">
- <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
