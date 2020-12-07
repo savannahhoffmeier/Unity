@@ -59,7 +59,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\MyScripts\AIHomework.cs" />
-     <Compile Include="Assets\MyScripts\AddForceBehavior.cs" />
      <Compile Include="Assets\MyScripts\CharacterSwitch.cs" />
      <Compile Include="Assets\MyScripts\ColorChange.cs" />
      <Compile Include="Assets\MyScripts\ControllerReview.cs" />
@@ -67,6 +66,7 @@
      <Compile Include="Assets\MyScripts\Review.cs" />
      <Compile Include="Assets\MyScripts\ScriptTest.cs" />
      <Compile Include="Assets\classScripts\AIBehavior.cs" />
+     <Compile Include="Assets\classScripts\AddForceBehavior.cs" />
      <Compile Include="Assets\classScripts\Animation.cs" />
      <Compile Include="Assets\classScripts\CharacterMover_1.cs" />
      <Compile Include="Assets\classScripts\ClassReview.cs" />
@@ -77,9 +77,9 @@
      <Compile Include="Assets\classScripts\FloatData.cs" />
      <Compile Include="Assets\classScripts\GameAction.cs" />
      <Compile Include="Assets\classScripts\GameSwitch.cs" />
+     <Compile Include="Assets\classScripts\Instancer.cs" />
      <Compile Include="Assets\classScripts\Loops.cs" />
      <Compile Include="Assets\classScripts\MonoEvents.cs" />
-     <Compile Include="Assets\classScripts\MoverScript.cs" />
      <Compile Include="Assets\classScripts\PowerUp.cs" />
      <Compile Include="Assets\classScripts\StringListData.cs" />
      <Compile Include="Assets\classScripts\TriggerEvents.cs" />

@@ -27,5 +27,8 @@ public class CharacterMover_1 : MonoBehaviour
         {
             yDirection = jumpForce;
         }
+
+        var movement = moveDirection * Time.deltaTime;
+        _controller.Move(movement);
     }
 }
