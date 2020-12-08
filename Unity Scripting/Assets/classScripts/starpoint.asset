@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7ef04551c7122a478323511585e6061, type: 3}
-  m_Name: New String List Data
+  m_Script: {fileID: 11500000, guid: 89d78c5ef8c1d2845935083308589b27, type: 3}
+  m_Name: starpoint
   m_EditorClassIdentifier: 
-  value:
-  - What is your quest
-  - What is your Favorite color
+  value: {x: 0, y: 0, z: 0}

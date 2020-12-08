@@ -81,6 +81,7 @@
      <Compile Include="Assets\classScripts\Loops.cs" />
      <Compile Include="Assets\classScripts\MonoEvents.cs" />
      <Compile Include="Assets\classScripts\PowerUp.cs" />
+     <Compile Include="Assets\classScripts\ReviewCharacterMover.cs" />
      <Compile Include="Assets\classScripts\StringListData.cs" />
      <Compile Include="Assets\classScripts\TriggerEvents.cs" />
      <Compile Include="Assets\classScripts\Vector3Data.cs" />
