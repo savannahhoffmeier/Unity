@@ -76,6 +76,7 @@
      <Compile Include="Assets\classScripts\Enumerator.cs" />
      <Compile Include="Assets\classScripts\FlipObjectBehavior.cs" />
      <Compile Include="Assets\classScripts\FloatData.cs" />
+     <Compile Include="Assets\classScripts\FunctionOptions.cs" />
      <Compile Include="Assets\classScripts\GameAction.cs" />
      <Compile Include="Assets\classScripts\GameSwitch.cs" />
      <Compile Include="Assets\classScripts\Instancer.cs" />
@@ -83,6 +84,7 @@
      <Compile Include="Assets\classScripts\MonoEvents.cs" />
      <Compile Include="Assets\classScripts\PowerUp.cs" />
      <Compile Include="Assets\classScripts\ReviewCharacterMover.cs" />
+     <Compile Include="Assets\classScripts\ScriptTesting.cs" />
      <Compile Include="Assets\classScripts\StringListData.cs" />
      <Compile Include="Assets\classScripts\TriggerEvents.cs" />
      <Compile Include="Assets\classScripts\Vector3Data.cs" />
