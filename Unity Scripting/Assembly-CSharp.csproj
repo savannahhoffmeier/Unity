@@ -68,6 +68,7 @@
      <Compile Include="Assets\classScripts\AIBehavior.cs" />
      <Compile Include="Assets\classScripts\AddForceBehavior.cs" />
      <Compile Include="Assets\classScripts\Animation.cs" />
+     <Compile Include="Assets\classScripts\AttachOnTrigger.cs" />
      <Compile Include="Assets\classScripts\CharacterMover_1.cs" />
      <Compile Include="Assets\classScripts\ClassReview.cs" />
      <Compile Include="Assets\classScripts\DefenceSwitch.cs" />

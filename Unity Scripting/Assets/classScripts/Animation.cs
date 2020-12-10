@@ -4,19 +4,17 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Animation : MonoBehaviour
 {
-    private Animator anims;
-    // Start is called before the first frame update
+    private Animator animation;
     void Start()
     {
-        anims=GetComponent<Animator>();
+        animation=GetComponent<Animator>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetButtonDown("Jump"))
         {
-            anims.SetTrigger("Jump");
+            animation.SetTrigger("Jump");
         }
     }
 }
