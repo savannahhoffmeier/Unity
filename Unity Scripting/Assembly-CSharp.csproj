@@ -71,6 +71,8 @@
      <Compile Include="Assets\classScripts\AttachOnTrigger.cs" />
      <Compile Include="Assets\classScripts\CharacterMover_1.cs" />
      <Compile Include="Assets\classScripts\ClassReview.cs" />
+     <Compile Include="Assets\classScripts\Collectibles.cs" />
+     <Compile Include="Assets\classScripts\Collections.cs" />
      <Compile Include="Assets\classScripts\DefenceSwitch.cs" />
      <Compile Include="Assets\classScripts\Destroyer.cs" />
      <Compile Include="Assets\classScripts\Enumerator.cs" />
