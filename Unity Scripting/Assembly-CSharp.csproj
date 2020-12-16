@@ -69,6 +69,7 @@
      <Compile Include="Assets\classScripts\AddForceBehavior.cs" />
      <Compile Include="Assets\classScripts\Animation.cs" />
      <Compile Include="Assets\classScripts\AttachOnTrigger.cs" />
+     <Compile Include="Assets\classScripts\BulletBehaviour.cs" />
      <Compile Include="Assets\classScripts\CharacterMover_1.cs" />
      <Compile Include="Assets\classScripts\ClassReview.cs" />
      <Compile Include="Assets\classScripts\Collectibles.cs" />
@@ -90,6 +91,7 @@
      <Compile Include="Assets\classScripts\StringListData.cs" />
      <Compile Include="Assets\classScripts\TriggerEvents.cs" />
      <Compile Include="Assets\classScripts\Vector3Data.cs" />
+     <Compile Include="Assets\classScripts\WitchShooting.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
