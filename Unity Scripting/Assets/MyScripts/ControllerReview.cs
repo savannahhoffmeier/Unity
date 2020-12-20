@@ -1,37 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.VersionControl;
 using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class ControllerReview : MonoBehaviour
 {
-    public float speed = 14f;
-    private Rigidbody rig;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
-    private Vector3 moveDirection= Vector3.zero;
-    private CharacterController controller;
+public float speed = 3.0F;
+public float rotateSpeed = 3.0F, gravity = 10f, jump=10f;
+public float ydirect;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rig = GetComponent<Rigidbody>();
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        float haxis = Input.GetAxis("Horizontal");
-        float vaxis = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(haxis, 0, vaxis) * speed * Time.deltaTime;
-        rig.MovePosition(transform.position+movement);
-
-        if (controller.isGrounded && Input.GetButton("Jump"))
-        {
-            moveDirection.y = jumpSpeed;
-        }
-
-        moveDirection.y -= gravity * Time.deltaTime;
-        controller.Move(moveDirection * Time.deltaTime);
-    }
+     
+ 
+     void Update()
+     {
+         CharacterController controller = GetComponent<CharacterController>();
+ 
+         // Rotate around y - axis
+         transform.Rotate(0, Input.GetAxis("Horizontal") * rotateSpeed, 0);
+ 
+         // Move forward / backward
+         Vector3 forward = transform.TransformDirection(Vector3.forward);
+         float curSpeed = speed * Input.GetAxis("Vertical");
+         controller.SimpleMove(forward * curSpeed);
+         
+         if (Input.GetButtonDown("jump"))
+         {
+             ydirect=jump;
+         }
+     }
+    
+    
 }
