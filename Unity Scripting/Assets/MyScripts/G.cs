@@ -1,46 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class G : MonoBehaviour
+[CreateAssetMenu]
+public class G : ScriptableObject
 {
-    private GameObject player;
-    public enum Gamepoints
-    {
-        Start,
-        Play,
-        GameOver,
-        Store,
-        Pause
-    }
+    public int value;
+    public UnityEvent powerUpEvent;
 
-    public Gamepoints CurrentGamepoints = Gamepoints.Start;
-
-    public void Playing()
+    private void OnTriggerEnter(Collider other)
     {
-        CurrentGamepoints = Gamepoints.Play;
-    }
-
-    public void RunCurrentState()
-    {
-        switch (CurrentGamepoints)
-        {
-            case Gamepoints.Start:
-                Debug.Log("Game Start");
-                break;
-            case Gamepoints.Play:
-                Debug.Log("Play");
-                break;
-            case Gamepoints.GameOver:
-                Debug.Log("Game Over");
-                Destroy(player);
-                break;
-            case Gamepoints.Store:
-                Debug.Log("Storage");
-                break;
-            case Gamepoints.Pause:
-                Debug.Log("Game Paused");
-                break;
-        }
+        value++;
+        
+        powerUpEvent.Invoke();
     }
 }
