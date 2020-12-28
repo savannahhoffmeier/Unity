@@ -6,15 +6,16 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu]
-public class G : ScriptableObject
+public class G : MonoBehaviour
 {
-    public int value;
-    public UnityEvent powerUpEvent;
-
-    private void OnTriggerEnter(Collider other)
+    private Transform bar;
+    private void Start()
     {
-        value++;
-        
-        powerUpEvent.Invoke();
+        Transform bar = transform.Find("Bar");
+    }
+
+    public void SetSize(float sizeNormalized)
+    {
+        bar.localScale = new Vector3(sizeNormalized, 1f);
     }
 }
