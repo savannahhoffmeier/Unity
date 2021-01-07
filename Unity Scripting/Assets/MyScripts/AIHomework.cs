@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
+[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIHomework : MonoBehaviour
 {
   public NavMeshAgent agent;
   public Transform player;
   public LayerMask whatIsGround, whatIsPlayer;
+  public float health;
   
   public Vector3 walkPoint;
   private bool walkPointSet;
@@ -19,6 +21,8 @@ public class AIHomework : MonoBehaviour
 
   public float sightRange, attackRange;
   public bool playerInSightRange, playerInAttackRange;
+
+  private GameObject projectile;
 
   private void Awake()
   {
@@ -44,6 +48,10 @@ public class AIHomework : MonoBehaviour
     }
 
     Vector3 distanceToWalkPoint = transform.position - walkPoint;
+    if (distanceToWalkPoint.magnitude < 1f)
+    {
+      walkPointSet = false;
+    }
   }
 
   private void SearchWalkPoint()
@@ -59,11 +67,37 @@ public class AIHomework : MonoBehaviour
   }
   private void ChasePlayer()
   {
-    
+    agent.SetDestination(player.position);
   }
 
   private void AttackPlayer()
   {
-    
+    agent.SetDestination(transform.position);
+    transform.LookAt(player);
+
+    if (!alreadyAttacked)
+    {
+      Rigidbody rb = Instantiate(projectile,transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+      
+      rb.AddForce(transform.forward*32f,ForceMode.Impulse);
+      rb.AddForce(transform.up*8f,ForceMode.Impulse);
+      
+      alreadyAttacked = true;
+      Invoke(nameof(resetAttack), timeBetweenAttacks);
+    }
+  }
+
+  private void resetAttack()
+  {
+    alreadyAttacked = false;
+  }
+
+  public void TakeDamage(int damage)
+  {
+    health -= damage;
+    if (health<=0)
+    {
+      // 4:27
+    }
   }
 }
