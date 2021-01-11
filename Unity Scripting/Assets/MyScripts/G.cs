@@ -5,17 +5,27 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu]
+
 public class G : MonoBehaviour
 {
-    private Transform bar;
-    private void Start()
+    public float damage = 10f;
+    public float range = 100f;
+    public Camera fpsCam;
+
+    private void Update()
     {
-        Transform bar = transform.Find("Bar");
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
     }
 
-    public void SetSize(float sizeNormalized)
+    void Shoot()
     {
-        bar.localScale = new Vector3(sizeNormalized, 1f);
+        RaycastHit hit;
+        if (Physics.Raycast(fpsCam.transform.position,fpsCam.transform.forward,out hit,range))
+        {
+            Debug.Log(hit.transform.name);
+        }
     }
 }
