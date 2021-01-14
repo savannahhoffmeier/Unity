@@ -1,49 +1,26 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+﻿
+using System;
 using UnityEngine;
-using UnityEngine.Events;
-
 
 public class G : MonoBehaviour
 {
-    public ParticleSystem muzzleFlash;
-    public float damage = 10f;
-    public float range = 100f;
-    public Camera fpsCam;
-    public GameObject impacteffect;
-    public float impactforce = 30f;
-    public float fireRate = 15f;
-    private float nextTimeFire = 0f;
-    private void Update()
+    public float mouseSensitivity = 100f;
+    public Transform playerBody;
+    private float xRotation = 0f;
+
+    private void Start()
     {
-        if (Input.GetButton("Fire1")&& Time.time>=nextTimeFire)
-        {
-            nextTimeFire = Time.time + 1f / fireRate;
-            Shoot();
-        }
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Shoot()
+    private void Update()
     {
-        muzzleFlash.Play();
-        RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position,fpsCam.transform.forward,out hit,range))
-        {
-            Debug.Log(hit.transform.name);
-            Target target = hit.transform.GetComponent<Target>();
-            if (target !=null)
-            {
-                target.TakeDamage(damage);
-            }
+        float mousex = Input.GetAxis("Mouse X") + mouseSensitivity + Time.deltaTime;
+        float mousey = Input.GetAxis("Mouse Y") + mouseSensitivity + Time.deltaTime;
+        xRotation -= mousey;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-            if (hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(-hit.normal*impactforce);
-            }
-            GameObject impactGo =Instantiate(impacteffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGo);
-        }
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        playerBody.Rotate(Vector3.up*mousex);
     }
 }
