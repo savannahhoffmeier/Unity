@@ -1,44 +1,28 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
+[RequireComponent(typeof(Rigidbody))]
 public class AIHomework : MonoBehaviour
 {
-   public float jumpingHeight = 7f;
-   public bool Grounded;
-   
-   private Rigidbody rb;
-   
-   void Start()
+   private Rigidbody rigidb;
+   private Vector3 usingforce;
+   private float pauseTime;
+
+   private IEnumerator Start()
    {
-    rb = GetComponent<Rigidbody>();
+      rigidb = GetComponent<Rigidbody>();
+      yield return new WaitForSeconds(pauseTime);
+      rigidb.AddForce(usingforce);
    }
-   
-   void Update()
+
+   private void jump()
    {
-      if (Grounded)
+      if (Input.GetKeyDown(KeyCode.Space))
       {
-         if (Input.GetButtonDown("Jump"))
-         {
-             rb.AddForce(Vector3.up * jumpingHeight);
-         }
+         rigidb.AddForce(usingforce);
       }
-   }
-   
-   void OnCollisionEnter(Collision other)
-   {
-       if (other.gameObject.tag == "Ground")
-       {
-           Grounded = true;
-       }
-   }
-   
-   void OnCollisionExit(Collision other)
-   {
-       if (other.gameObject.tag == "Ground")
-       {
-           Grounded = false;
-       }
    }
 }
