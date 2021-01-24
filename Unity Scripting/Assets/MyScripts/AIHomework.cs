@@ -7,22 +7,23 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class AIHomework : MonoBehaviour
 {
-   private Rigidbody rigidb;
-   private Vector3 usingforce;
-   private float pauseTime;
+    public Transform player;
+    private static Animator anime;
 
-   private IEnumerator Start()
-   {
-      rigidb = GetComponent<Rigidbody>();
-      yield return new WaitForSeconds(pauseTime);
-      rigidb.AddForce(usingforce);
-   }
+    private void Start()
+    {
+        anime = GetComponent<Animator>();
+    }
 
-   private void jump()
-   {
-      if (Input.GetKeyDown(KeyCode.Space))
-      {
-         rigidb.AddForce(usingforce);
-      }
-   }
+    private void Update()
+    {
+        Vector3 direction = player.position - this.transform.position;
+        float angle = Vector3.Angle(direction,this.transform.forward);
+        if (Vector3.Distance(player.position,this.transform.position)<10&&angle<30)
+        {
+            direction.y = 0;
+            
+            this.transform.rotation=Quaternion.Slerp(this.transform.rotation,Quaternion.LookRotation(direction), 0.1f);
+        }
+    }
 }
