@@ -8,46 +8,43 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class AIHomework : MonoBehaviour
 {
-    public Transform player;
-    private static Animator anime;
-
-    private void Start()
+    public enum GameStates
     {
-        anime = GetComponent<Animator>();
+        Starting,
+        Playing,
+        Ending,
+        InStore,
+        Pausing
     }
 
-    private void Update()
+    public GameStates currentGameStates = GameStates.Starting;
+
+    public void ChangeToPlaying()
     {
-        Vector3 direction = player.position - this.transform.position;
-        float angle = Vector3.Angle(direction, this.transform.forward);
-        if (Vector3.Distance(player.position, this.transform.position) < 10 && angle < 30)
+        currentGameStates = GameStates.Playing;
+    }
+
+    public void RunCurrentState()
+    {
+        switch (currentGameStates)
         {
-            direction.y = 0;
-
-            this.transform.rotation =
-                Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
-            anime.SetBool("isIdle", false);
-            if ((direction.magnitude > 5))
-            {
-                this.transform.Translate(0, 0, 0.10f);
-                anime.SetBool("isRunning", true);
-                anime.SetBool("isAttacking", false);
-                anime.SetBool("isTalking", false);
-                anime.SetBool("isIdle2", false);
-
-            }
-            else
-            {
-                anime.SetBool("isRunning", false);
-                anime.SetBool("isAttacking", true);
-                anime.SetBool("isTalking", false);
-                anime.SetBool("isIdle2", false);
-            }
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                anime.SetBool("isTalking", true);
-            }
+            case GameStates.Starting:
+                Debug.Log("Starting");
+                break;
+            case GameStates.Playing:
+                Debug.Log("Playing");
+                break;
+            case GameStates.Ending:
+                Debug.Log("Playing");
+                break;
+            case GameStates.InStore:
+                Debug.Log("InStore");
+                break;
+            case GameStates.Pausing:
+                Debug.Log("Pausing");
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 }

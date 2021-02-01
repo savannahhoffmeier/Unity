@@ -60,13 +60,6 @@
   <ItemGroup>
      <Compile Include="Assets\MyScripts\AIHomework.cs" />
      <Compile Include="Assets\MyScripts\CharacterSwitch.cs" />
-     <Compile Include="Assets\MyScripts\ColorChange.cs" />
-     <Compile Include="Assets\MyScripts\ControllerReview.cs" />
-     <Compile Include="Assets\MyScripts\G.cs" />
-     <Compile Include="Assets\MyScripts\Health.cs" />
-     <Compile Include="Assets\MyScripts\HealthDisplay.cs" />
-     <Compile Include="Assets\MyScripts\Target.cs" />
-     <Compile Include="Assets\MyScripts\UnityTutorial.cs" />
      <Compile Include="Assets\classScripts\AIBehavior.cs" />
      <Compile Include="Assets\classScripts\AddForceBehavior.cs" />
      <Compile Include="Assets\classScripts\Animation.cs" />
