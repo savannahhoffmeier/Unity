@@ -8,43 +8,37 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class AIHomework : MonoBehaviour
 {
-    public enum GameStates
+    public float jumpHeight = 7f;
+    public bool isGrounded;
+    public float NumberJumps =8f;
+    public float maxJumps = 2f;
+    private Rigidbody rb;
+
+    private void Start()
     {
-        Starting,
-        Playing,
-        Ending,
-        InStore,
-        Pausing
+        rb = GetComponent<Rigidbody>();
     }
 
-    public GameStates currentGameStates = GameStates.Starting;
-
-    public void ChangeToPlaying()
+    private void Update()
     {
-        currentGameStates = GameStates.Playing;
-    }
-
-    public void RunCurrentState()
-    {
-        switch (currentGameStates)
+        if (NumberJumps>maxJumps-1)
         {
-            case GameStates.Starting:
-                Debug.Log("Starting");
-                break;
-            case GameStates.Playing:
-                Debug.Log("Playing");
-                break;
-            case GameStates.Ending:
-                Debug.Log("Playing");
-                break;
-            case GameStates.InStore:
-                Debug.Log("InStore");
-                break;
-            case GameStates.Pausing:
-                Debug.Log("Pausing");
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
+            isGrounded = false;
         }
+
+        if (isGrounded)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                rb.AddForce(Vector3.up*jumpHeight);
+                NumberJumps += 1;
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        isGrounded = true;
+        NumberJumps = 2;
     }
 }
