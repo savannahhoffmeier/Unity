@@ -8,37 +8,22 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class AIHomework : MonoBehaviour
 {
-    public float jumpHeight = 7f;
-    public bool isGrounded;
-    public float NumberJumps =8f;
-    public float maxJumps = 2f;
-    private Rigidbody rb;
+    public float score =12;
+    private void OnTriggerEnter(Collider other)
+    {
+        transform.parent = other.transform;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        transform.parent = null;
+    }
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    private void Update()
-    {
-        if (NumberJumps>maxJumps-1)
+        if (score>12)
         {
-            isGrounded = false;
+            score++;
         }
-
-        if (isGrounded)
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                rb.AddForce(Vector3.up*jumpHeight);
-                NumberJumps += 1;
-            }
-        }
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        isGrounded = true;
-        NumberJumps = 2;
     }
 }
