@@ -10,28 +10,38 @@ using Random = UnityEngine.Random;
 
 public class CharacterSwitch : MonoBehaviour
 {
-    public Text dispalyT;
-    private Touch Touch;
-    private float TouchEnded;
-    private float Timed = .5f;
+    public float Points = 15f;
+    public bool gift;
+    private GameObject Player;
+    enum Enmuerator
+    {
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
+    }
 
     private void Update()
     {
-        if (Input.touchCount>0)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            Touch = Input.GetTouch(0);
-            dispalyT.text = Touch.phase.ToString();
-            if (Touch.phase==TouchPhase.Ended)
-            {
-                TouchEnded = Time.time;
-            }
+            Points++;
         }
         else
         {
-            if (Time.time-TouchEnded>Timed)
-            {
-                dispalyT.text = "End of Text";
-            }
+            Points--;
+        }
+
+        if (gift==true)
+        {
+            return;
+        }
+        else
+        {
+            Destroy(Player);
         }
     }
 }
