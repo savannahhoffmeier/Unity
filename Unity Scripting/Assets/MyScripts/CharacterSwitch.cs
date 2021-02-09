@@ -1,47 +1,37 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Random))]
 
 public class CharacterSwitch : MonoBehaviour
 {
-    private int rNumber;
-    public new Light light;
-    public float redo = 2f;
-    private float time = 0;
- 
-    private void Start()
-    {
-        light = gameObject.GetComponent<Light>();
-        rNumber = Random.Range(1, 4);
-    }
+    public Text dispalyT;
+    private Touch Touch;
+    private float TouchEnded;
+    private float Timed = .5f;
+
     private void Update()
     {
-        time += Time.deltaTime ;
-        if (time >= redo)
+        if (Input.touchCount>0)
         {
-            switch (rNumber)
+            Touch = Input.GetTouch(0);
+            dispalyT.text = Touch.phase.ToString();
+            if (Touch.phase==TouchPhase.Ended)
             {
-                case 0:
-                    break;
-                case 1:
-                    light.color = Color.blue;
-                    Debug.Log("Color switched to blue!");
-                    break;
-                case 2:
-                    light.color = Color.red;
-                    Debug.Log("Color switched to red!");
-                    break;
-                case 3:
-                    light.color = Color.green;
-                    Debug.Log("Color switched to green!");
-                    break;
+                TouchEnded = Time.time;
             }
-            time = 0f;
-            rNumber = Random.Range(1, 4);
+        }
+        else
+        {
+            if (Time.time-TouchEnded>Timed)
+            {
+                dispalyT.text = "End of Text";
+            }
         }
     }
 }
