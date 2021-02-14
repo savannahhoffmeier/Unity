@@ -8,22 +8,43 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class AIHomework : MonoBehaviour
 {
-    public float score =12;
-    private void OnTriggerEnter(Collider other)
+    public enum GameStates
     {
-        transform.parent = other.transform;
+        Starting,
+        Playing,
+        Ending,
+        InStore,
+        Pausing
     }
 
-    private void OnTriggerExit(Collider other)
+    public GameStates currentGameStates = GameStates.Starting;
+
+    public void ChangeToPlaying()
     {
-        transform.parent = null;
+        currentGameStates = GameStates.Playing;
     }
 
-    private void Start()
+    public void RunCurrentState()
     {
-        if (score>12)
+        switch (currentGameStates)
         {
-            score++;
+            case GameStates.Starting:
+                Debug.Log("Starting");
+                break;
+            case GameStates.Playing:
+                Debug.Log("Playing");
+                break;
+            case GameStates.Ending:
+                Debug.Log("Playing");
+                break;
+            case GameStates.InStore:
+                Debug.Log("InStore");
+                break;
+            case GameStates.Pausing:
+                Debug.Log("Pausing");
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 }
