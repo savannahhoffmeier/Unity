@@ -8,6 +8,9 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody))]
 public class AIHomework : MonoBehaviour
 {
+    private Rigidbody rigid;
+    public Vector3 forces;
+    public float holdTime=3f;
     public enum GameStates
     {
         Starting,
@@ -46,5 +49,20 @@ public class AIHomework : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    } 
+    private IEnumerator Start()
+    {
+        rigid = GetComponent<Rigidbody>();
+        yield return new WaitForSeconds(holdTime);
+        rigid.AddForce(forces);
+        rigid = GetComponent<Rigidbody>();
+        yield return new WaitForSeconds(holdTime);
+        rigid.AddForce(forces);
+        rigid = GetComponent<Rigidbody>();
+        yield return new WaitForSeconds(holdTime);
+        rigid.AddForce(forces);
+        rigid = GetComponent<Rigidbody>();
+        yield return new WaitForSeconds(holdTime);
+        rigid.AddForce(forces);
     }
 }
