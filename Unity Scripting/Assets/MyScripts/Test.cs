@@ -10,6 +10,7 @@ using Random = UnityEngine.Random;
 public class Test : MonoBehaviour
 {
     private Rigidbody rb;
+    private GameObject collision;
 
     private void Start()
     {
@@ -27,5 +28,13 @@ public class Test : MonoBehaviour
     private void OnMouseDown()
     {
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (collision.gameObject.tag=="Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
 }
