@@ -9,32 +9,15 @@ using Random = UnityEngine.Random;
 
 public class Test : MonoBehaviour
 {
-    private Rigidbody rb;
-    private GameObject collision;
+    float speed = .5f;
+    (int, int) positionToMoveTo = (3, 6);
 
-    private void Start()
+    void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        Cursor.visible = false;
     }
-
-    private void Update()
+    void Update()
     {
-        if(Input.GetKeyDown("Space"))
-        {
-            rb.AddForce(Vector3.up);
-        }
-    }
-
-    private void OnMouseDown()
-    {
-        Destroy(gameObject);
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (collision.gameObject.tag=="Enemy")
-        {
-            Destroy(gameObject);
-        }
+        transform.position = Vector2.MoveTowards(transform.position, positionToMoveTo, speed * Time.deltaTime);
     }
 }
