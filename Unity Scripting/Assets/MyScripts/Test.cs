@@ -9,15 +9,13 @@ using Random = UnityEngine.Random;
 
 public class Test : MonoBehaviour
 {
-    float speed = .5f;
-    (int, int) positionToMoveTo = (3, 6);
-
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        Cursor.visible = false;
+        transform.parent = other.transform;
     }
-    void Update()
+
+    private void OnTriggerExit(Collider other)
     {
-        transform.position = Vector2.MoveTowards(transform.position, positionToMoveTo, speed * Time.deltaTime);
+        transform.parent = null;
     }
 }
