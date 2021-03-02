@@ -9,13 +9,19 @@ using Random = UnityEngine.Random;
 
 public class Test : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    public GameObject Arrow;
+    public GameObject Bow;
+    public static int movespeed = 3;
+    public Vector3 userDirection = Vector3.down;
+    
+    void Start()
     {
-        transform.parent = other.transform;
+     (Arrow) = GameObject.Find("Arrow"); 
+     (Bow) = GameObject.Find("Bow"); 
+     Arrow.transform.position = Bow.transform.position; 
     }
-
-    private void OnTriggerExit(Collider other)
+    void Update()
     {
-        transform.parent = null;
+        transform.Translate(userDirection * movespeed * Time.deltaTime);
     }
 }
