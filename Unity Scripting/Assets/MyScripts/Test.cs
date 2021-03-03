@@ -23,5 +23,18 @@ public class Test : MonoBehaviour
     void Update()
     {
         transform.Translate(userDirection * movespeed * Time.deltaTime);
+        
+        if (Input.GetMouseButtonDown(0)) {
+            gameObject.active = true;
+        }
+        if (Input.GetMouseButtonDown(1)) {
+            gameObject.active = false;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            Destroy(gameObject);
+        }
     }
+    
 }
