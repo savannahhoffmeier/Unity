@@ -9,21 +9,15 @@ using Random = UnityEngine.Random;
 
 public class Test : MonoBehaviour
 {
-    
-   public List<Transform> collectedTransforms;
-       public Sprite art;
-       public Color artColor;
-   
-       public void Collect(Transform obj)
-       {
-           collectedTransforms.Add(obj);
-       }
-   
-       public void PrintCollection()
-       {
-           foreach (var obj in collectedTransforms)
-           {
-               Debug.Log(obj);   
-           }
-       }
+    private float MHits=30f;
+    private float Chits=20f;
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0)==true)
+        {
+            Chits = -5f;
+            transform.localScale=new Vector3(Chits/MHits,1f,1f);
         }
+    }
+}
