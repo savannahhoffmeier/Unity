@@ -11,8 +11,8 @@ public class Test : MonoBehaviour
 {
     public enum ShootState {
         Ready,
-        Shooting,
-        Reloading
+        Shoot,
+        Reload
     }
     
     private float muzzleOffset;
@@ -32,6 +32,23 @@ public class Test : MonoBehaviour
     void Start() {
         muzzleOffset = GetComponent<Renderer>().bounds.extents.z;
         remainingAmmo = ammo;
+    }
+    void Update() {
+        switch(shootState) {
+            case ShootState.Shoot:
+                
+                if(Time.time > nextShootTime) {
+                    shootState = ShootState.Ready;
+                }
+                break;
+            case ShootState.Reload:
+               
+                if(Time.time > nextShootTime) {
+                    remainingAmmo = ammo;
+                    shootState = ShootState.Ready;
+                }
+                break;
+        }
     }
 
 }
