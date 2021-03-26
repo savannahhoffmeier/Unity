@@ -50,5 +50,45 @@ public class Test : MonoBehaviour
                 break;
         }
     }
+    public void Shoot() {
+        // Checks that the gun is ready to shoot
+        if(shootState == ShootState.Ready) {
+            for(int i = 0; i < roundsPerShot; i++) {
+                // Instantiates the round at the muzzle position
+                GameObject spawnedRound = Instantiate(
+                    round,
+                    transform.position + transform.forward * muzzleOffset,
+                    transform.rotation
+                );
+
+                // Add a random variation to the round's direction
+                spawnedRound.transform.Rotate(new Vector3(
+                    Random.Range(-1f, 1f) * maxRoundVariation,
+                    Random.Range(-1f, 1f) * maxRoundVariation,
+                    0
+                ));
+
+                Rigidbody rb = spawnedRound.GetComponent<Rigidbody>();
+                rb.velocity = spawnedRound.transform.forward * roundSpeed;
+            }
+
+            remainingAmmo--;
+            if(remainingAmmo > 0) {
+                nextShootTime = Time.time + (1 / fireRate);
+                shootState = ShootState.Shoot;
+            } else {
+                Reload();
+            }
+        }
+    }
+
+    /// Attempts to reload the gun
+    public void Reload() {
+        // Checks that the gun is ready to be reloaded
+        if(shootState == ShootState.Ready) {
+            nextShootTime = Time.time + reloadTime;
+            shootState = ShootState.Reload;
+        }
+    }
 
 }
