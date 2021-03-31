@@ -35,13 +35,16 @@ public class Test : MonoBehaviour
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;
-        }
-
-        // Changes the height position of the player..
-        if (Input.GetButtonDown("Jump") && gPlayer)
-        {
-            playerV.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        }
+    
+      {
+              float amountToMove = movementSpeed * Time.deltaTime;
+              Vector3 movement = (Input.GetAxis("Horizontal") * -Vector3.left * amountToMove) + (Input.GetAxis("Vertical") * Vector3.forward * amountToMove);
+              rigidbody.AddForce(movement, ForceMode.Force);
+       
+              if (Input.GetKeyDown("space"))
+              {
+                  rigidbody.AddForce(Vector3.up * jumpSpeed);
+              }
 
         playerV.y += gravityValue * Time.deltaTime;
         controller.Move(playerV * Time.deltaTime);
