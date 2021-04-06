@@ -58,35 +58,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MyScripts\CharacterMover.cs" />
-     <Compile Include="Assets\MyScripts\Test.cs" />
-     <Compile Include="Assets\classScripts\AIBehavior.cs" />
-     <Compile Include="Assets\classScripts\AddForceBehavior.cs" />
-     <Compile Include="Assets\classScripts\Animation.cs" />
-     <Compile Include="Assets\classScripts\AttachOnTrigger.cs" />
-     <Compile Include="Assets\classScripts\BulletBehaviour.cs" />
-     <Compile Include="Assets\classScripts\CharacterMover_1.cs" />
-     <Compile Include="Assets\classScripts\ClassReview.cs" />
-     <Compile Include="Assets\classScripts\Collectibles.cs" />
-     <Compile Include="Assets\classScripts\Collections.cs" />
-     <Compile Include="Assets\classScripts\DefenceSwitch.cs" />
-     <Compile Include="Assets\classScripts\Destroyer.cs" />
-     <Compile Include="Assets\classScripts\Enumerator.cs" />
-     <Compile Include="Assets\classScripts\FlipObjectBehavior.cs" />
-     <Compile Include="Assets\classScripts\FloatData.cs" />
-     <Compile Include="Assets\classScripts\FunctionOptions.cs" />
-     <Compile Include="Assets\classScripts\GameAction.cs" />
-     <Compile Include="Assets\classScripts\GameSwitch.cs" />
-     <Compile Include="Assets\classScripts\Instancer.cs" />
-     <Compile Include="Assets\classScripts\Loops.cs" />
-     <Compile Include="Assets\classScripts\MonoEvents.cs" />
-     <Compile Include="Assets\classScripts\PowerUp.cs" />
-     <Compile Include="Assets\classScripts\ReviewCharacterMover.cs" />
-     <Compile Include="Assets\classScripts\ScriptTesting.cs" />
-     <Compile Include="Assets\classScripts\StringListData.cs" />
-     <Compile Include="Assets\classScripts\TriggerEvents.cs" />
-     <Compile Include="Assets\classScripts\Vector3Data.cs" />
-     <Compile Include="Assets\classScripts\WitchShooting.cs" />
+     <Compile Include="Assets\Scripts\AIBehavior.cs" />
+     <Compile Include="Assets\Scripts\AddForceBehavior.cs" />
+     <Compile Include="Assets\Scripts\Animation.cs" />
+     <Compile Include="Assets\Scripts\AttachOnTrigger.cs" />
+     <Compile Include="Assets\Scripts\BulletBehaviour.cs" />
+     <Compile Include="Assets\Scripts\CharacterMover_1.cs" />
+     <Compile Include="Assets\Scripts\ClassReview.cs" />
+     <Compile Include="Assets\Scripts\Collectibles.cs" />
+     <Compile Include="Assets\Scripts\Collections.cs" />
+     <Compile Include="Assets\Scripts\DefenceSwitch.cs" />
+     <Compile Include="Assets\Scripts\Destroyer.cs" />
+     <Compile Include="Assets\Scripts\Enumerator.cs" />
+     <Compile Include="Assets\Scripts\FlipObjectBehavior.cs" />
+     <Compile Include="Assets\Scripts\FloatData.cs" />
+     <Compile Include="Assets\Scripts\FunctionOptions.cs" />
+     <Compile Include="Assets\Scripts\GameAction.cs" />
+     <Compile Include="Assets\Scripts\GameSwitch.cs" />
+     <Compile Include="Assets\Scripts\Instancer.cs" />
+     <Compile Include="Assets\Scripts\Loops.cs" />
+     <Compile Include="Assets\Scripts\MonoEvents.cs" />
+     <Compile Include="Assets\Scripts\PowerUp.cs" />
+     <Compile Include="Assets\Scripts\ReviewCharacterMover.cs" />
+     <Compile Include="Assets\Scripts\ScriptTesting.cs" />
+     <Compile Include="Assets\Scripts\StringListData.cs" />
+     <Compile Include="Assets\Scripts\TriggerEvents.cs" />
+     <Compile Include="Assets\Scripts\Vector3Data.cs" />
+     <Compile Include="Assets\Scripts\WitchShooting.cs" />
+     <Compile Include="Assets\script test\CharacterMover.cs" />
+     <Compile Include="Assets\script test\Test.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
