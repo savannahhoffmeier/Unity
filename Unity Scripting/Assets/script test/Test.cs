@@ -3,42 +3,38 @@
 [RequireComponent(typeof(Rigidbody))]
 public class Test : MonoBehaviour
 {
- public float attackSpeed = 4;
-     public float attackDistance;
-     public float waitDistance;
-     public GameObject player;
+    public float jumpHeight = 7f;
+    public bool isGrounded;
+    public float NJumps = 0f;
+    public float MJumps = 2;
+    private Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        if (NJumps > MJumps - 1)
+        {
+            isGrounded = false;
+        }
+
+        if (isGrounded)
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                rb.AddForce(Vector3.up * jumpHeight);
+                NJumps += 1;
+            }
+        }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        isGrounded = true;
+        NJumps = 0;
+    }
  
-     Transform playerTransform;
- 
-     void GetPlayerTransform()
-     {
-         if (player != null)
-         {
-             playerTransform = player.transform;
-         }
-         else
-         {
-             Debug.Log("Player is seen");
-         }
-     }
- 
-     // Start is called before the first frame update
-     void Start()
-     {
-         GetPlayerTransform();
-     }
- 
-     // Update is called once per frame
-     void Update()
-     {
-         var distance = Vector3.Distance(playerTransform.position, transform.position);
-         
-         if (distance <= attackDistance)
-         {
-             if (distance >= waitDistance)
-             {
-                 transform.position += transform.forward * attackSpeed * Time.deltaTime;
-             }
-         }
-     }
 }
