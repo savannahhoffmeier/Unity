@@ -18,12 +18,12 @@ public class CharacterMover : MonoBehaviour
     private float looker;
     public float sensitivity = 5;
      
-    // Use this for initialization
+    
     void Start () {
 
     }
      
-    // Update is called once per frame
+   
     void Update () {
         CharacterController controller = GetComponent<CharacterController>();
         // is the controller on the ground?
@@ -33,7 +33,7 @@ public class CharacterMover : MonoBehaviour
             moveDirection = transform.TransformDirection(moveDirection);
             //Multiply it by speed.
             moveDirection *= speed;
-            //Jumping
+            
             if (Input.GetButton("Jump"))
                 moveDirection.y = jumpSpeed;
              
@@ -41,16 +41,16 @@ public class CharacterMover : MonoBehaviour
         turner = Input.GetAxis ("Mouse X")* sensitivity;
         looker = -Input.GetAxis ("Mouse Y")* sensitivity;
         if(turner != 0){
-            //Code for action on mouse moving right
+            
             transform.eulerAngles += new Vector3 (0,turner,0);
         }
         if(looker != 0){
-            //Code for action on mouse moving right
+           
             transform.eulerAngles += new Vector3 (looker,0,0);
         }
-        //Applying gravity to the controller
+        
         moveDirection.y -= gravity * Time.deltaTime;
-        //Making the character move
+        
         controller.Move(moveDirection * Time.deltaTime);
     }
 }
