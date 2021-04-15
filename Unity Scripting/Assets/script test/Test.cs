@@ -2,39 +2,37 @@
 
 [RequireComponent(typeof(Rigidbody))]
 public class Test : MonoBehaviour
-{
-    public float jumpHeight = 7f;
-    public bool isGrounded;
-    public float NJumps = 0f;
-    public float MJumps = 2;
-    private Rigidbody rb;
-
-    void Start()
+{ float Speed= 20;
+    private Vector3 wayPoint;
+    float Range= 10; 
+ 
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    void Update()
-    {
-        if (NJumps > MJumps - 1)
-        {
-            isGrounded = false;
-        }
-
-        if (isGrounded)
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                rb.AddForce(Vector3.up * jumpHeight);
-                NJumps += 1;
-            }
-        }
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        isGrounded = true;
-        NJumps = 0;
+      
+        Wander();
     }
  
+    private void Update() 
+    {
+        
+        transform.position += transform.TransformDirection(Vector3.forward)*Speed*Time.deltaTime;
+        if((transform.position - wayPoint).magnitude < 3)
+        {
+            
+            Wander();
+ 
+ 
+        }
+    }
+ 
+    private void Wander()
+    { 
+      
+     
+        wayPoint= new Vector3(Random.Range(transform.position.x - Range, transform.position.x + Range), 1, Random.Range(transform.position.z - Range, transform.position.z + Range));
+        wayPoint.y = 1;
+     
+        transform.LookAt(wayPoint);
+        Debug.Log(wayPoint + " and " + (transform.position - wayPoint).magnitude);
+    }
 }
