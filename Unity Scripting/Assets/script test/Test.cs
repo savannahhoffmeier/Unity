@@ -2,37 +2,48 @@
 
 [RequireComponent(typeof(Rigidbody))]
 public class Test : MonoBehaviour
-{ float Speed= 20;
-    private Vector3 wayPoint;
-    float Range= 10; 
- 
-    private void Start()
+{
+    private GameObject Point;
+    private Vector3 wayPointPos;
+   
+    private float speed = 6.0f;
+    void Start ()
     {
-      
-        Wander();
+       
+        wayPoint = GameObject.Find("wayPoint");
     }
  
-    private void Update() 
+    void move()
     {
+        wayPointPos = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
         
-        transform.position += transform.TransformDirection(Vector3.forward)*Speed*Time.deltaTime;
-        if((transform.position - wayPoint).magnitude < 3)
+        transform.position = Vector3.MoveTowards(transform.position, wayPointPos, speed * Time.deltaTime);
+    }
+ 
+
+
+    
+    public GameObject wayPoint;
+    
+    private float timer = 0.5f;
+ 
+    void Update ()
+    {
+        if(timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        if(timer <= 0)
         {
             
-            Wander();
- 
- 
+            UpdatePosition();
+            timer = 0.5f;
         }
     }
- 
-    private void Wander()
-    { 
-      
-     
-        wayPoint= new Vector3(Random.Range(transform.position.x - Range, transform.position.x + Range), 1, Random.Range(transform.position.z - Range, transform.position.z + Range));
-        wayPoint.y = 1;
-     
-        transform.LookAt(wayPoint);
-        Debug.Log(wayPoint + " and " + (transform.position - wayPoint).magnitude);
+
+    void UpdatePosition()
+    {
+
+        wayPoint.transform.position = transform.position;
     }
 }
