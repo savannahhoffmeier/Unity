@@ -3,47 +3,29 @@
 [RequireComponent(typeof(Rigidbody))]
 public class Test : MonoBehaviour
 {
-    private GameObject Point;
-    private Vector3 wayPointPos;
-   
-    private float speed = 6.0f;
-    void Start ()
-    {
-       
-        wayPoint = GameObject.Find("wayPoint");
-    }
- 
-    void move()
-    {
-        wayPointPos = new Vector3(wayPoint.transform.position.x, transform.position.y, wayPoint.transform.position.z);
-        
-        transform.position = Vector3.MoveTowards(transform.position, wayPointPos, speed * Time.deltaTime);
-    }
- 
 
-
-    
-    public GameObject wayPoint;
-    
-    private float timer = 0.5f;
- 
-    void Update ()
+    void Update()
     {
-        if(timer > 0)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            timer -= Time.deltaTime;
-        }
-        if(timer <= 0)
-        {
-            
-            UpdatePosition();
-            timer = 0.5f;
+            gameObject.GetComponent<Renderer>().material.color = new Color(233, 79, 55);
         }
     }
-
-    void UpdatePosition()
+    Transform GetClosestEnemy(Transform[] enemies)
     {
-
-        wayPoint.transform.position = transform.position;
+        Transform tMin = null;
+        float minDist = Mathf.Infinity;
+        Vector3 currentPos = transform.position;
+        foreach (Transform t in enemies)
+        {
+            float dist = Vector3.Distance(t.position, currentPos);
+            if (dist < minDist)
+            {
+                tMin = t;
+                minDist = dist;
+            }
+        }
+        return tMin;
     }
+    
 }
