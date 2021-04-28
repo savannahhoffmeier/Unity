@@ -3,29 +3,38 @@
 [RequireComponent(typeof(Rigidbody))]
 public class Test : MonoBehaviour
 {
+    public float jumpHeight = 7f;
+    public bool isGrounded;
+    public float NumberJumps = 0f;
+    public float MaxJumps = 2;
+    private Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (NumberJumps > MaxJumps - 1)
         {
-            gameObject.GetComponent<Renderer>().material.color = new Color(233, 79, 55);
+            isGrounded = false;
         }
-    }
-    Transform GetClosestEnemy(Transform[] enemies)
-    {
-        Transform tMin = null;
-        float minDist = Mathf.Infinity;
-        Vector3 currentPos = transform.position;
-        foreach (Transform t in enemies)
+
+        if (isGrounded)
         {
-            float dist = Vector3.Distance(t.position, currentPos);
-            if (dist < minDist)
+            if (Input.GetButtonDown("Jump"))
             {
-                tMin = t;
-                minDist = dist;
+                rb.AddForce(Vector3.up * jumpHeight);
+                NumberJumps += 1;
             }
         }
-        return tMin;
     }
-    
+
+    void OnCollisionEnter(Collision other)
+    {
+        isGrounded = true;
+        NumberJumps = 0;
+    }
+  
 }
