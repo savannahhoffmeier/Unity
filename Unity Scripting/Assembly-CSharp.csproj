@@ -86,7 +86,7 @@
      <Compile Include="Assets\Scripts\Vector3Data.cs" />
      <Compile Include="Assets\Scripts\WitchShooting.cs" />
      <Compile Include="Assets\script test\CharacterMover.cs" />
-     <Compile Include="Assets\script test\Test.cs" />
+     <Compile Include="Assets\script test\Follow.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/savan/Documents/Digital Media Portfolio/Digital Media 1610/Unity/Unity Scripting/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
